@@ -141,7 +141,8 @@ async function getOrgInformation(organizationLogin, projectNumber, token, conten
             loginVariable: organizationLogin,
             projectVariable: projectNumber,
             headers: {
-                authorization: `bearer ${token}`
+                'authorization': `bearer ${token}`,
+                'GraphQL-Features': 'projects_next_graphql'
             }
         });
     return response;
@@ -185,7 +186,8 @@ async function getRepoInformation(repositoryOwner, repositoryName, projectNumber
             nameVariable: repositoryName,
             projectVariable: projectNumber,
             headers: {
-                authorization: `bearer ${token}`
+                'authorization': `bearer ${token}`,
+                'GraphQL-Features': 'projects_next_graphql'
             }
         });
     return response;
