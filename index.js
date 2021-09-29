@@ -59,6 +59,7 @@ async function getColumnAndIssueInformation(columnName, projectUrl, token, conte
         var orgLogin = splitUrl[4];
         console.log(`This project is configured at the org level. Org Login:${orgLogin}, project #${projectNumber}`);
         var orgInformation = await getOrgInformation(orgLogin, projectNumber, token, contentType);
+        console.log('orgInformation:', orgInformation);
         orgInformation.organization.project.columns.nodes.forEach(function(columnNode){
             if(columnNode.name == columnName){
                 columnId = columnNode.databaseId;
